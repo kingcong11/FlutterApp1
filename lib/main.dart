@@ -6,8 +6,13 @@ void main() {
 
 class MyApp extends StatelessWidget {
 
+  
+  var questionIndex = 0;
+
   void answerQuestion() {
-    print('Answer Chosen!');
+    // print('Answer Chosen!');
+    questionIndex+=1;
+    print(questionIndex);
   }
 
   @override
@@ -27,10 +32,10 @@ class MyApp extends StatelessWidget {
 
         body: Column(
           children: [
-            Text('The Question.'),
+            Text(questions[questionIndex]),
             RaisedButton(
               child: Text('Answer1'),
-              onPressed: answerQuestion,
+              onPressed: () => print("Answer 1 Chosen inside anonymous function"),
             ),
             RaisedButton(
               child: Text('Answer2'),
