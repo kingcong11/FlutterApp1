@@ -4,14 +4,19 @@ void main() {
   runApp(MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
+  @override
+  MyAppState createState() => MyAppState();
+}
 
-  
+class MyAppState extends State<MyApp> {
   var questionIndex = 0;
 
   void answerQuestion() {
-    // print('Answer Chosen!');
-    questionIndex+=1;
+    setState((){
+      questionIndex+=1;
+    });
+    
     print(questionIndex);
   }
 
@@ -35,7 +40,7 @@ class MyApp extends StatelessWidget {
             Text(questions[questionIndex]),
             RaisedButton(
               child: Text('Answer1'),
-              onPressed: () => print("Answer 1 Chosen inside anonymous function"),
+              onPressed: answerQuestion,
             ),
             RaisedButton(
               child: Text('Answer2'),
