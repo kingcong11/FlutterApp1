@@ -14,14 +14,15 @@ class Question extends StatelessWidget {
       margin: EdgeInsets.all(8.0),
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFFeb5775),
+        color: const Color(0xFFff704d),
         borderRadius: BorderRadius.circular(9),
         boxShadow: [
           BoxShadow(
-              color: Colors.grey.withOpacity(0.7),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: Offset(0, 2)),
+            color: Colors.grey.withOpacity(0.7),
+            spreadRadius: 5,
+            blurRadius: 7,
+            offset: Offset(0, 2),
+          ),
         ],
       ),
       child: Text(

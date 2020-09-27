@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
-
 /* Widgets */
 import './question.dart';
+import './answer.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,52 +18,38 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
   void _answerQuestion() {
-    setState((){
-      _questionIndex+=1;
+    setState(() {
+      _questionIndex += 1;
     });
-    
+
     print(_questionIndex);
   }
 
   @override
   Widget build(BuildContext context) {
-
     var questions = [
       'What\'s your favorite color?',
       'What\'s your favorite animal?'
     ];
 
     return MaterialApp(
-      home: Scaffold( 
-
+      home: Scaffold(
         appBar: AppBar(
           title: Text('Notex'),
         ),
-
-        body: Column(
-          children: [
-            Question(questions[_questionIndex]),
-            RaisedButton(
-              child: Text('Answer1'),
-              onPressed: _answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Answer2'),
-              onPressed: _answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Answer3'),
-              onPressed: _answerQuestion,
-            ),
-            RaisedButton(
-              child: Text('Answer4'),
-              onPressed: _answerQuestion,
-            ),
-          ],
+        body: Container(
+          // color: const Color(0xFFffd6cc),
+          child: Column(
+            children: [
+              Question(questions[_questionIndex]),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+              Answer(_answerQuestion),
+            ],
+          ),
         ),
-
       ),
     );
-
   }
 }
