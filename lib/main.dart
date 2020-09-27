@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+
 
 /* Widgets */
 import './question.dart';
@@ -27,8 +29,8 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
 
     var questions = [
-      'What\'s your favorite color',
-      'What\'s your favorite animal'
+      'What\'s your favorite color?',
+      'What\'s your favorite animal?'
     ];
 
     return MaterialApp(
