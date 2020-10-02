@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       {
         'questionText': 'What\'s your favorite color?',
         'availableAnswers': [
-          {'value': 'Blue', 'colorCode': 0xFF002aff, 'bgColorCode': 0xFFc7d0ff},
+          {'value': 'Blue', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFc7e3ff},
           {'value': 'Red', 'colorCode': 0xFFe30d2a, 'bgColorCode': 0xFFfccad1},
           {'value': 'Green', 'colorCode': 0xFF0cca15, 'bgColorCode': 0xFFcafccc},
           {'value': 'Orange', 'colorCode': 0xFFf27521, 'bgColorCode': 0xFFfcdeca},
@@ -41,10 +41,10 @@ class _MyAppState extends State<MyApp> {
       {
         'questionText': 'What\'s your favorite animal?',
         'availableAnswers': [
-          {'value': 'Panda', 'colorCode': '0xFF002aff'},
-          {'value': 'Lamma', 'colorCode': '0xFF002aff'},
-          {'value': 'Tiger', 'colorCode': '0xFF002aff'},
-          {'value': 'Owl', 'colorCode': '0xFF002aff'},
+          {'value': 'Panda', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Lamma', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Tiger', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Owl', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
         ],
       },
     ];
