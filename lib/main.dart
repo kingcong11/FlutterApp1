@@ -41,10 +41,10 @@ class _MyAppState extends State<MyApp> {
       {
         'questionText': 'What\'s your favorite animal?',
         'availableAnswers': [
-          {'value': 'Panda', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
-          {'value': 'Lamma', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
-          {'value': 'Tiger', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
-          {'value': 'Owl', 'colorCode': 0xFF3399FF, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Panda', 'colorCode': 0xFF000000, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Lamma', 'colorCode': 0xFFd9cc99, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Tiger', 'colorCode': 0xFFff704d, 'bgColorCode': 0xFFFFFFFF},
+          {'value': 'Owl', 'colorCode': 0xFF7d5226, 'bgColorCode': 0xFFFFFFFF},
         ],
       },
     ];
