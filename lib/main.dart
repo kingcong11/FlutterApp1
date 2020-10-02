@@ -27,9 +27,26 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // Map / JSON inside List
     var questions = [
-      'What\'s your favorite color?',
-      'What\'s your favorite animal?'
+      {
+        'questionText': 'What\'s your favorite color?',
+        'availableAnswers': [
+          {'value': 'Blue', 'colorCode': 0xFF002aff, 'bgColorCode': 0xFFc7d0ff},
+          {'value': 'Red', 'colorCode': 0xFFe30d2a, 'bgColorCode': 0xFFfccad1},
+          {'value': 'Green', 'colorCode': 0xFF0cca15, 'bgColorCode': 0xFFcafccc},
+          {'value': 'Orange', 'colorCode': 0xFFf27521, 'bgColorCode': 0xFFfcdeca},
+        ],
+      },
+      {
+        'questionText': 'What\'s your favorite animal?',
+        'availableAnswers': [
+          {'value': 'Panda', 'colorCode': '0xFF002aff'},
+          {'value': 'Lamma', 'colorCode': '0xFF002aff'},
+          {'value': 'Tiger', 'colorCode': '0xFF002aff'},
+          {'value': 'Owl', 'colorCode': '0xFF002aff'},
+        ],
+      },
     ];
 
     return MaterialApp(
@@ -41,11 +58,10 @@ class _MyAppState extends State<MyApp> {
           // color: const Color(0xFFffd6cc),
           child: Column(
             children: [
-              Question(questions[_questionIndex]),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
-              Answer(_answerQuestion),
+              Question(questions[_questionIndex]['questionText']),
+              ...(questions[_questionIndex]['availableAnswers'] as List<Map>).map((answer) {
+                return Answer(_answerQuestion, answer['value'], baseColor: answer['colorCode'], bgColor: answer['bgColorCode'],);
+              }).toList(),
             ],
           ),
         ),
