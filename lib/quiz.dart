@@ -20,9 +20,9 @@ class Quiz extends StatelessWidget {
     return Column(
       children: [
         Question(questions[questionIndex]['questionText']),
-        ...(questions[questionIndex]['availableAnswers'] as List<Map>).map((answer) {
+        ...(questions[questionIndex]['availableAnswers'] as List<Map<String, Object>>).map((answer) {
             return Answer(
-              answerQuestion,
+              () => answerQuestion(answer['score']),
               answer['value'],
               baseColor: answer['colorCode'],
               bgColor: answer['bgColorCode'],
