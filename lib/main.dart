@@ -2,12 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 
 /* Widgets */
-import './question.dart';
-import './answer.dart';
+import './quiz.dart';
+import './result.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
   @override
@@ -18,7 +16,7 @@ class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
   // Map / JSON inside List
-  var questions = [
+  var _questions = [
     {
       'questionText': 'What\'s your favorite color?',
       'availableAnswers': [
@@ -55,24 +53,13 @@ class _MyAppState extends State<MyApp> {
           title: Text('Notex'),
         ),
         body: Container(
-          // color: const Color(0xFFffd6cc),
-          child: (_questionIndex < questions.length) ? Column(
-                  children: [
-                    Question(questions[_questionIndex]['questionText']),
-                    ...(questions[_questionIndex]['availableAnswers']
-                            as List<Map>)
-                        .map((answer) {
-                      return Answer(
-                        _answerQuestion,
-                        answer['value'],
-                        baseColor: answer['colorCode'],
-                        bgColor: answer['bgColorCode'],
-                      );
-                    }).toList(),
-                  ],
-                ) : Center(
-                  child: Text('You finished the Survey!'),
-                ),
+          child: (_questionIndex < _questions.length) ? 
+            Quiz(
+              questions: _questions, 
+              questionIndex: _questionIndex, 
+              answerQuestion: _answerQuestion
+            ) : 
+            Result(),
         ),
       ),
     );

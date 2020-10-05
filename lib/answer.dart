@@ -12,10 +12,6 @@ class Answer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    var text = HSLColor.fromColor(Color(baseColor));
-    print(text);
-
-
     return Container(
       width: 150,
       margin: EdgeInsets.all(10),
